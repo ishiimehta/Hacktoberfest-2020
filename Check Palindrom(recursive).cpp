@@ -1,62 +1,28 @@
-/*
-Check if a given String S is palindrome or not (using recursion). Return true or false.
-Input Format :
-
-String S
-
-Output Format :
-
-true or false
-
-Sample Input 1 :
-
-racecar
-
-Sample Output 1:
-
-true
-
-Sample Input 2 :
-
-ninja
-
-Sample Output 2:
-
-false
-
-*/
-
-#include <bits/stdc++.h>
-using namespace std;
-bool chp(char input[],int start,int end){
-    if(end<start)
-        return true;
-    if(input[start]!=input[end])
-        return false;
-    
-    bool ans=chp(input,start+1,end-1);
-    return ans;
-}
-bool checkPalindrome(char input[]) {
-    // Write your code here
-    int end=strlen(input)-1;
-    return chp(input,0,end);
-    
-}
-
-
 #include <iostream>
-#include "solution.h"
 using namespace std;
 
-int main() {
-    char input[50];
-    cin >> input;
-    
-    if(checkPalindrome(input)) {
-        cout << "true" << endl;
-    }
-    else {
-        cout << "false" << endl;
-    }
+int main()
+{
+     int n, num, digit, rev = 0;
+
+     cout << "Enter a positive number: ";
+     cin >> num;
+
+     n = num;
+
+     do
+     {
+         digit = num % 10;
+         rev = (rev * 10) + digit;
+         num = num / 10;
+     } while (num != 0);
+
+     cout << " The reverse of the number is: " << rev << endl;
+
+     if (n == rev)
+         cout << " The number is a palindrome.";
+     else
+         cout << " The number is not a palindrome.";
+
+    return 0;
 }
