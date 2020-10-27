@@ -1,21 +1,16 @@
-#include <iostream>
-using namespace std;
-
-int fib(int n) {
-	if (n == 0) {
-		return 0;
-	}
-
-	if (n == 1) {
-		return 1;
-	}
-
-	int smallOutput1 = fib(n - 1);
-	int smallOutput2 = fib(n - 2);
-	return smallOutput1 + smallOutput2;
-}
-
-int main() {
-	cout << fib(3) << endl;
-}
-
+#include <iostream>  
+using namespace std;  
+int main() {  
+  int n1=0,n2=1,n3,i,number;    
+ cout<<"Enter the number of elements: ";    
+ cin>>number;    
+ cout<<n1<<" "<<n2<<" "; //printing 0 and 1    
+ for(i=2;i<number;++i) //loop starts from 2 because 0 and 1 are already printed    
+ {    
+  n3=n1+n2;    
+  cout<<n3<<" ";    
+  n1=n2;    
+  n2=n3;    
+ }    
+   return 0;  
+   }  
